@@ -1,0 +1,36 @@
+server:
+  port: 4000
+
+zuul:
+  prefix: /api
+  routes:
+    auth-service:
+      path: /auth/**
+      url: http://localhost:5000/auth-service
+  auth-free-endpoints: /api/auth/users/, /api/auth/users
+
+security:
+  oauth2:
+    sso:
+      loginPath: /login
+    client:
+      accessTokenUri: http://localhost:5000/auth-service/oauth/token
+      clientId: api_gateway_oauth2
+      clientSecret: '{cipher}AgABilzn8ztOi4Pb8BkEBeEaHQTht1YGcI50vvHl7HcGAuNGlpX4XLRoTjwj361CCP6gy+yyVTliyer2j9MEvVsaXYMvDBfUvzNXpgBClRutt0Se0q4hfYOz6B10yUEHszVANYvgrWw+phttAgzyrz4LkheHbE59vi0WqjLMvqd/0pRor/gVjg0MRNeT5PJdR4NhduJVDebSZx+l64+nbx401I9w82pn1uhbWCOXvXc7msps55/ZhZ6HEldAtDLR2g/9NkOYcvPaAXn5x6AE1duhpokxfD0F5SkHPfyUhxC+qdNQdC5Y/gg7SM5fji2E6ZlQYWMhMYU0kmet2hmQPLbQiCUYnCjwlGi96LFE+DhDaXt5Sq11vyyL6I3l/jp+inEUn8rs0HHp/Hf6Dtcy7hK2BE0itxqK1xvA3MPQLIMI5xoGi9LO03Ju3q5jbzEIL3wvKVpfMzwknVCq8qF1OVWgEFpqQ8AKM1b/Z/bgiVQYK/TtLfyr8it9Cglod2y3/mMEwxbOGQVuxPcVcfNLhI/YxsdHqOsiw0QLLcjhrN/gNybZHYeQ8ToUmsKtrsk4IYOIbxIOegR5bgARxZBTXHbrWElRv+/eMoWFvTueQ3Z9dwzlQzkXuKFvlIa8cdolZf60aa8SQi374/KQMJYaci6PjxSK2BcCMHmgC67bEB0c72Ydr2ZmCvl6jgKr8cI9cBArbJMCh6jpWejIO285p/ZM'
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAh3EYqia10a5hr7bNxT+H
+          YzNc7m/4WGdIniFu8Ux07e1UZcYnzbE2hmllpBvkz/y+mpQaJrvaSqMStGsEWknw
+          IQKrnCGIoMpGwQe+Or/eKcOmztw1iE+j3SlleUJOdBSR7wrk0i/hPOXXffheaHh9
+          7UOwkLwJXaPy2IgXcPHcD0vVC0Rr/WSo44wI8mobLFLdh7ioMtsuDKUalamNhn2g
+          fRjiYFkE+Ld0gnujiR+mHHSYwNPblePymkG3gSgCjvKeeQuIRN/MBz8eh7aZmN0r
+          bCNDefIc9tli5aoQSFgCvZT/j12zVwaSPLJiW7dloaQlBSbK/52krrvGs6Zx/3k8
+          jWC74B67zkeoB384Sut82ujSmnDeltnGnx//RbtzPuGlPLFGRnti40iI6yMta9hc
+          /TaxGY7Q2GXwZmUuKq0rpIq/3prdLvh+grtRkH3v24wtAKCi/Gekgahb/gIKUiEF
+          isZxZoXr07lS2ySlxnIfihUTEOne20j0EIidzOiBhl4aNjIJyrLOoQPO3n4Mu3i/
+          fkV+FnqUd7btQ8abKCcHavftZmYjJ8Q7Pw5LFsqr+8r+b96Dgh2fjwAG8WH+1T4D
+          /RI0lM66MCdBuWPN/ayUILwlvD/KRmo7BXvMeu5N2ssiXKsi+T3wgPZ9ksEm+cgW
+          UiNddcSpyfgyZ8mn8d/+vY8CAwEAAQ==
+          -----END PUBLIC KEY-----
