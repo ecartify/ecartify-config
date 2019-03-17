@@ -8,13 +8,22 @@ eureka:
   instance:
     preferIpAddress: true
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
 zuul:
+  ignoredPatterns: /**/actuator/**
   prefix: /api
   routes:
     auth-service:
       path: /auth/**
       serviceId: auth-service
-  auth-free-endpoints: /api/auth/users/, /api/auth/users
+  auth-free-endpoints: /api/auth/users/, /api/auth/users, /actuator/**
 
 security:
   oauth2:

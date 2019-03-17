@@ -1,35 +1,46 @@
 server:
- port: 5000
+  port: 5000
 
 eureka:
- client:
-  serviceUrl:
-   defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
- instance:
-  preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
 
 spring:
- data:
-  mongodb:
-   host: localhost
-   username: mongo-user
-   password: '{cipher}AgA1+vX+1LSMdKGki3x0mCKYNOOzh67klqcUfoeIztqGyF6gfdf5Kbim81YrsrDZHeAZoqv9WHIvxT/jthCHjKRZ3EnnvgugmgIrhytmtlxEg0u/KbreEOBihAiSYvagMVSv38GhHNN0/xu3cNd5QUexpWq7xjJkYjpdC1Bx4ZLy24t2UPd0HaIOg6ZVgZusoZpGsYjUVZsSJL7J55zuqDH3H8JbctLY7vA56RiAMDXxWoMPebsW5bTw2pSjDqLeTCPFeCPfYp1FoMAVA6yMMxzyes9SM/JDMXlDmEhzcqvAzWaQMuHbYsw1qbCu/RdKOF/5bVsb3HpANH4A+TUrj0/9z29BpYsGAcbqewfww6LyBFonAtt/pGYnSzoVnDNlWTBtjGKl30IzQV9RJxZVDF8Ke4O+Fb/sZmUSVKzPV01t9AtW5DBfTGkbnho+vjV8kiA46JcDGxJv2eSl4QOYQH65oYxsXFbgNLoUZdPaN/3WdnygXDS7igh/yL6czTNbkwop8GPwrwwM/74HxZTYyzAuw1QjjiEA8ZN1rwxCgDKTvFpb6Vo5ncChZSCytkylZ2gHRR39+R+rQ2kOGWqNO4SuPgtjHUDIi6sk4Pl7n/YESsYgpKFJQtS+qbTAvMR3AN1SWyXJqgDmMTyvdPk1GJiDfsbl7rNezCALPIYzxtwTo1NwYAad51uyF+phx+viKuJNofuLCrs5Pmox+0BJ2lSa'
-   database: ecartify
-   port: 27017
+  data:
+    mongodb:
+      host: localhost
+      username: mongo-user
+      password: '{cipher}AgA1+vX+1LSMdKGki3x0mCKYNOOzh67klqcUfoeIztqGyF6gfdf5Kbim81YrsrDZHeAZoqv9WHIvxT/jthCHjKRZ3EnnvgugmgIrhytmtlxEg0u/KbreEOBihAiSYvagMVSv38GhHNN0/xu3cNd5QUexpWq7xjJkYjpdC1Bx4ZLy24t2UPd0HaIOg6ZVgZusoZpGsYjUVZsSJL7J55zuqDH3H8JbctLY7vA56RiAMDXxWoMPebsW5bTw2pSjDqLeTCPFeCPfYp1FoMAVA6yMMxzyes9SM/JDMXlDmEhzcqvAzWaQMuHbYsw1qbCu/RdKOF/5bVsb3HpANH4A+TUrj0/9z29BpYsGAcbqewfww6LyBFonAtt/pGYnSzoVnDNlWTBtjGKl30IzQV9RJxZVDF8Ke4O+Fb/sZmUSVKzPV01t9AtW5DBfTGkbnho+vjV8kiA46JcDGxJv2eSl4QOYQH65oYxsXFbgNLoUZdPaN/3WdnygXDS7igh/yL6czTNbkwop8GPwrwwM/74HxZTYyzAuw1QjjiEA8ZN1rwxCgDKTvFpb6Vo5ncChZSCytkylZ2gHRR39+R+rQ2kOGWqNO4SuPgtjHUDIi6sk4Pl7n/YESsYgpKFJQtS+qbTAvMR3AN1SWyXJqgDmMTyvdPk1GJiDfsbl7rNezCALPIYzxtwTo1NwYAad51uyF+phx+viKuJNofuLCrs5Pmox+0BJ2lSa'
+      database: ecartify
+      port: 27017
 
 ecartify:
- gateway:
-  oauth2:
-   clientId: api_gateway_oauth2
-   clientSecret: '{cipher}AgABilzn8ztOi4Pb8BkEBeEaHQTht1YGcI50vvHl7HcGAuNGlpX4XLRoTjwj361CCP6gy+yyVTliyer2j9MEvVsaXYMvDBfUvzNXpgBClRutt0Se0q4hfYOz6B10yUEHszVANYvgrWw+phttAgzyrz4LkheHbE59vi0WqjLMvqd/0pRor/gVjg0MRNeT5PJdR4NhduJVDebSZx+l64+nbx401I9w82pn1uhbWCOXvXc7msps55/ZhZ6HEldAtDLR2g/9NkOYcvPaAXn5x6AE1duhpokxfD0F5SkHPfyUhxC+qdNQdC5Y/gg7SM5fji2E6ZlQYWMhMYU0kmet2hmQPLbQiCUYnCjwlGi96LFE+DhDaXt5Sq11vyyL6I3l/jp+inEUn8rs0HHp/Hf6Dtcy7hK2BE0itxqK1xvA3MPQLIMI5xoGi9LO03Ju3q5jbzEIL3wvKVpfMzwknVCq8qF1OVWgEFpqQ8AKM1b/Z/bgiVQYK/TtLfyr8it9Cglod2y3/mMEwxbOGQVuxPcVcfNLhI/YxsdHqOsiw0QLLcjhrN/gNybZHYeQ8ToUmsKtrsk4IYOIbxIOegR5bgARxZBTXHbrWElRv+/eMoWFvTueQ3Z9dwzlQzkXuKFvlIa8cdolZf60aa8SQi374/KQMJYaci6PjxSK2BcCMHmgC67bEB0c72Ydr2ZmCvl6jgKr8cI9cBArbJMCh6jpWejIO285p/ZM'
-   scope: api_gateway_scope
-   accessTokenValidityInSeconds: 600
-   refreshTokenValidityInSeconds: 1800
-   jwt:
-    keystore:
-     name: auth-server.jks
-     password: '{cipher}AgAflvsq3chjd7Ygivci5yPBhted1MtnBBW8md22d1u/o4z6d3HJr3GfLX/IvFRNfJ2A5pNd5XRw4UqJ0OWsZsUPxIgiwFNUWXYHtDn1ySf7vs8Wr8STbWCnHhiIzNUcaZlv5/CIp6oiR+fpD8Br7/GPpQlO2QVLzHgE8kDGSEi/5XPKWeYGpq89TzBi+mAfRijBwG9Of9Iojs4m5uZFdVDL2bhYsZT2Ipg2oaPrM3t8ftsRJ25Vq1N6oYe987OoRu4WjWmodASNMVgJhMHqLyf9ZcnoXL/hshBr0cJsbPaTQ7j1cyo/cGbYZiGEXPYXJaxt6eGcEMK7QVYxHnTkJkk6vJdmHbUKcA2kuzxCSp1dvFQVhQ7mLombURw1e0b5i3vju9GqBeBkSzLthpuOeW8tUkKHQG5grTGs1urdGSdheZ7276M4+aZatq87PWn7Nu3wBh4E4Lo/8HAxwQnRMywpZc2x++htxKksLcmjOtsL5M9wBdIZhkj0o22kIv2wpe2FmA4JgDUU1EtFui0OyiixQHf0DR0kXDOng0hDCaBz74youLiPCmOz+Ma1Jk18os5dTdUC94xZwD4SOQfZ0gRSdnq5nt7DLaEnkuORJXpoLvrMlTtFH9LNXDgCoHBnewAYJlFphMv0xGnvsVfwxDjouO0W7GiC5bC23rZDi4D9CNpOxnyJurROLTAZf2V1cHsMw1yrCKcPUvlSU//DuGuDPZFRP3R5YdaVIKxblkt6Ow=='
-    keyName: auth-server-jwt-key
+  gateway:
+    oauth2:
+      clientId: api_gateway_oauth2
+      clientSecret: '{cipher}AgABilzn8ztOi4Pb8BkEBeEaHQTht1YGcI50vvHl7HcGAuNGlpX4XLRoTjwj361CCP6gy+yyVTliyer2j9MEvVsaXYMvDBfUvzNXpgBClRutt0Se0q4hfYOz6B10yUEHszVANYvgrWw+phttAgzyrz4LkheHbE59vi0WqjLMvqd/0pRor/gVjg0MRNeT5PJdR4NhduJVDebSZx+l64+nbx401I9w82pn1uhbWCOXvXc7msps55/ZhZ6HEldAtDLR2g/9NkOYcvPaAXn5x6AE1duhpokxfD0F5SkHPfyUhxC+qdNQdC5Y/gg7SM5fji2E6ZlQYWMhMYU0kmet2hmQPLbQiCUYnCjwlGi96LFE+DhDaXt5Sq11vyyL6I3l/jp+inEUn8rs0HHp/Hf6Dtcy7hK2BE0itxqK1xvA3MPQLIMI5xoGi9LO03Ju3q5jbzEIL3wvKVpfMzwknVCq8qF1OVWgEFpqQ8AKM1b/Z/bgiVQYK/TtLfyr8it9Cglod2y3/mMEwxbOGQVuxPcVcfNLhI/YxsdHqOsiw0QLLcjhrN/gNybZHYeQ8ToUmsKtrsk4IYOIbxIOegR5bgARxZBTXHbrWElRv+/eMoWFvTueQ3Z9dwzlQzkXuKFvlIa8cdolZf60aa8SQi374/KQMJYaci6PjxSK2BcCMHmgC67bEB0c72Ydr2ZmCvl6jgKr8cI9cBArbJMCh6jpWejIO285p/ZM'
+      scope: api_gateway_scope
+      accessTokenValidityInSeconds: 600
+      refreshTokenValidityInSeconds: 1800
+      jwt:
+        keystore:
+          name: auth-server.jks
+          password: '{cipher}AgAflvsq3chjd7Ygivci5yPBhted1MtnBBW8md22d1u/o4z6d3HJr3GfLX/IvFRNfJ2A5pNd5XRw4UqJ0OWsZsUPxIgiwFNUWXYHtDn1ySf7vs8Wr8STbWCnHhiIzNUcaZlv5/CIp6oiR+fpD8Br7/GPpQlO2QVLzHgE8kDGSEi/5XPKWeYGpq89TzBi+mAfRijBwG9Of9Iojs4m5uZFdVDL2bhYsZT2Ipg2oaPrM3t8ftsRJ25Vq1N6oYe987OoRu4WjWmodASNMVgJhMHqLyf9ZcnoXL/hshBr0cJsbPaTQ7j1cyo/cGbYZiGEXPYXJaxt6eGcEMK7QVYxHnTkJkk6vJdmHbUKcA2kuzxCSp1dvFQVhQ7mLombURw1e0b5i3vju9GqBeBkSzLthpuOeW8tUkKHQG5grTGs1urdGSdheZ7276M4+aZatq87PWn7Nu3wBh4E4Lo/8HAxwQnRMywpZc2x++htxKksLcmjOtsL5M9wBdIZhkj0o22kIv2wpe2FmA4JgDUU1EtFui0OyiixQHf0DR0kXDOng0hDCaBz74youLiPCmOz+Ma1Jk18os5dTdUC94xZwD4SOQfZ0gRSdnq5nt7DLaEnkuORJXpoLvrMlTtFH9LNXDgCoHBnewAYJlFphMv0xGnvsVfwxDjouO0W7GiC5bC23rZDi4D9CNpOxnyJurROLTAZf2V1cHsMw1yrCKcPUvlSU//DuGuDPZFRP3R5YdaVIKxblkt6Ow=='
+        keyName: auth-server-jwt-key
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+
 
 
 
