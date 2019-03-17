@@ -1,7 +1,13 @@
 server:
  port: 5000
- servlet:
-  context-path: /auth-service
+
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+ instance:
+  preferIpAddress: true
+
 spring:
  data:
   mongodb:

@@ -1,12 +1,19 @@
 server:
   port: 4000
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+
 zuul:
   prefix: /api
   routes:
     auth-service:
       path: /auth/**
-      url: http://localhost:5000/auth-service
+      serviceId: auth-service
   auth-free-endpoints: /api/auth/users/, /api/auth/users
 
 security:
@@ -14,7 +21,7 @@ security:
     sso:
       loginPath: /login
     client:
-      accessTokenUri: http://localhost:5000/auth-service/oauth/token
+      accessTokenUri: http://auth-service/oauth/token
       clientId: api_gateway_oauth2
       clientSecret: '{cipher}AgABilzn8ztOi4Pb8BkEBeEaHQTht1YGcI50vvHl7HcGAuNGlpX4XLRoTjwj361CCP6gy+yyVTliyer2j9MEvVsaXYMvDBfUvzNXpgBClRutt0Se0q4hfYOz6B10yUEHszVANYvgrWw+phttAgzyrz4LkheHbE59vi0WqjLMvqd/0pRor/gVjg0MRNeT5PJdR4NhduJVDebSZx+l64+nbx401I9w82pn1uhbWCOXvXc7msps55/ZhZ6HEldAtDLR2g/9NkOYcvPaAXn5x6AE1duhpokxfD0F5SkHPfyUhxC+qdNQdC5Y/gg7SM5fji2E6ZlQYWMhMYU0kmet2hmQPLbQiCUYnCjwlGi96LFE+DhDaXt5Sq11vyyL6I3l/jp+inEUn8rs0HHp/Hf6Dtcy7hK2BE0itxqK1xvA3MPQLIMI5xoGi9LO03Ju3q5jbzEIL3wvKVpfMzwknVCq8qF1OVWgEFpqQ8AKM1b/Z/bgiVQYK/TtLfyr8it9Cglod2y3/mMEwxbOGQVuxPcVcfNLhI/YxsdHqOsiw0QLLcjhrN/gNybZHYeQ8ToUmsKtrsk4IYOIbxIOegR5bgARxZBTXHbrWElRv+/eMoWFvTueQ3Z9dwzlQzkXuKFvlIa8cdolZf60aa8SQi374/KQMJYaci6PjxSK2BcCMHmgC67bEB0c72Ydr2ZmCvl6jgKr8cI9cBArbJMCh6jpWejIO285p/ZM'
     resource:
